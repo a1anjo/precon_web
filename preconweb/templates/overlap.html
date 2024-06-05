@@ -1,0 +1,226 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  .btn-visit {
+      padding: 8px 40px;
+      background: var(--accent-color);
+      color: var(--contrast-color);
+      border-radius: 50px;
+      transition: 0.3s;
+      margin-left: 10%;
+  }
+  
+  .btn-visit:hover {
+      background: color-mix(in srgb, var(--accent-color), transparent 20%);
+      color: black; /* Change text color to black on hover */
+  }
+
+  .center-image-container {
+      text-align: center;
+      margin-top: 20px;
+  }
+
+  .center-image-container img {
+      max-width: 100%;
+      height: auto;
+      display: inline-block;
+  }
+
+  .center-image-container caption {
+      display: block;
+      margin-top: 10px;
+      font-size: 1.1em;
+      font-weight: bold;
+  }
+</style>
+
+<main class="main">
+  <!-- Page Title -->
+  <div class="page-title" data-aos="fade" style="background-image: url('{% static "img/overlap/overlap-main.jpg" %}');">
+    <div class="container position-relative">
+      <h1>DELTA OVERLAP</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="{% url "index" %}">Home</a></li>
+          <li class="current">Delta Overlap</li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
+
+  <!-- Alt Services 2 Section -->
+  <section id="alt-services-2" class="alt-services-2 section">
+    <div class="container">
+      <div class="row justify-content-around gy-4">
+        <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+          <h3>Introduction</h3>
+          <p style="text-align:justify;">
+            Delta Overlap, an Italian company, is a leading manufacturer in the residential garage door market. Renowned for its innovative "Overlap" concept, Delta Overlap offers a unique solution that eliminates ceiling tracks, maximizing garage space. The operator is integrated into the door frame's upper beam, allowing two sections to move seamlessly with a patented locking system. Delta Overlap combines advanced technology with skilled craftsmanship.
+          </p>
+          <h5>Products & Services</h5>
+          <div class="row">
+            <div class="col-lg-6 icon-box d-flex">
+              <i class="bi bi-brightness-high flex-shrink-0"></i>
+              <div>
+                <h4>Sectional Doors</h4>
+              </div>
+            </div><!-- End Icon Box -->
+            <div class="col-lg-6 icon-box d-flex">
+              <i class="bi bi-brightness-high flex-shrink-0"></i>
+              <div>
+                <h4>Overlap Doors</h4>
+              </div>
+            </div><!-- End Icon Box -->
+            <div class="col-lg-6 icon-box d-flex">
+              <i class="bi bi-brightness-high flex-shrink-0"></i>
+              <div>
+                <h4>Overbased Doors</h4>
+              </div>
+            </div><!-- End Icon Box -->
+            <div class="col-lg-6 icon-box d-flex">
+              <i class="bi bi-brightness-high flex-shrink-0"></i>
+              <div>
+                <h4>Bioclimatic Pergola</h4>
+              </div>
+            </div><!-- End Icon Box -->
+            <div class="col-lg-6 icon-box d-flex">
+              <i class="bi bi-brightness-high flex-shrink-0"></i>
+              <div>
+                <h4>Entrance Doors</h4>
+              </div>
+            </div><!-- End Icon Box -->
+            <div class="col-lg-6 icon-box d-flex">
+              <i class="bi bi-brightness-high flex-shrink-0"></i>
+              <div>
+                <h4>Rapid Doors</h4>
+              </div>
+            </div><!-- End Icon Box -->
+            <div class="col-lg-6 icon-box d-flex">
+              <i class="bi bi-brightness-high flex-shrink-0"></i>
+              <div>
+                <h4>Glazings</h4>
+              </div>
+            </div><!-- End Icon Box -->
+          </div>
+          <a href="https://www.overlapconfigurator.com/StartOltreEN.aspx" target="blank" class="btn-visit align-self-start">Configure Now <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div class="features-image col-lg-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
+          <img src="{% static "img/overlap/main.png" %}" alt="">
+        </div>
+      </div>
+    </div>
+  </section><!-- /Alt Services 2 Section -->
+
+  <!-- Features Cards Section -->
+  <section id="features-cards" class="features-cards section">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <h3>Sectional Doors</h3>
+          <p>The Overlap sectional door has insulated panels, anti-pinch system, zinc-plated tracks, and torsion springs.</p>
+          <ul class="list-unstyled">
+            <li><i class="bi bi-check2"></i> <span>Anti-pinch and anti-crushing "finger-safe" system</span></li>
+            <li><i class="bi bi-check2"></i> <span>Electro-zinc-plated steel components with anti-fall device and torsion spring balancing</span></li>
+            <li><i class="bi bi-check2"></i> <span>Panels in 500 and 610 by 40 mm thickness with embossed Sendzimir galvanized steel</span></li>
+          </ul>
+        </div><!-- End feature item-->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <h3>Overlap Doors</h3>
+          <p>The Overlap door innovatively opens without ceiling guides, halving space, with a motor in the top frame.</p>
+          <ul class="list-unstyled">
+            <li><i class="bi bi-check2"></i> <span>No ceiling guides needed, freeing up ceiling space</span></li>
+            <li><i class="bi bi-check2"></i> <span>Motor integrated into the upper frame crosspiece</span></li>
+            <li><i class="bi bi-check2"></i> <span>Reduces internal space usage by half</span></li>
+          </ul>
+        </div><!-- End feature item-->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <h3>Overbased Doors</h3>
+          <p>Sleek overbased doors for garages & industrial use with retractable engine, counterweight mechanics, & anti-burglary features for smooth, secure operation.</p>
+          <ul class="list-unstyled">
+            <li><i class="bi bi-check2"></i> <span>Retractable engine eliminates need for ceiling guides</span></li>
+            <li><i class="bi bi-check2"></i> <span>Counterweight mechanics ensure reliability</span></li>
+            <li><i class="bi bi-check2"></i> <span>Trackless design for smooth, obstruction-free operation</span></li>
+          </ul>
+        </div><!-- End feature item-->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <h3>Entrance Doors</h3>
+          <p>Delta Overlap entrance doors offer certified performance: RC 5 burglary resistance, thermal transmittance, and acoustic performance for excellence.</p>
+          <ul class="list-unstyled">
+            <li><i class="bi bi-check2"></i> <span>RC 5 burglary resistance</span></li>
+            <li><i class="bi bi-check2"></i> <span>Thermal transmittance: 1.00 W/m²K</span></li>
+            <li><i class="bi bi-check2"></i> <span>Acoustic performance: 38 dB</span></li>
+          </ul>
+        </div><!-- End feature item-->
+      </div>
+    </div>
+  </section><!-- /Features Cards Section -->
+
+  <!-- Alt Services 2 Section -->
+  <section id="alt-services-2" class="alt-services-2 section">
+    <div class="container target-element" id="hart">
+      <div class="row justify-content-around gy-4">
+        <div class="features-image col-lg-5 order-1 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <img src="{% static "img/overlap/pergola.png" %}" alt="">
+        </div>
+        <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+          <h3>Bioclimatic Pergola</h3>
+          <p style="text-align:justify;">
+            Overlap bioclimatic pergola offers adjustable sunlight, natural ventilation, and rain protection with aluminum slats rotating up to 140°. Control via winch, sensors, or radio.
+          </p>
+          <div class="row">
+            <div class="col-lg-6 icon-box d-flex">
+              <i class="bi bi-check2"></i>
+              <div>
+                <p>Adjustable slats manage sunlight and ventilation</p>
+              </div>
+            </div><!-- End Icon Box -->
+            <div class="col-lg-6 icon-box d-flex">
+              <i class="bi bi-check2"></i>
+              <div>
+                <p>Rain protection when slats are fully closed</p>
+              </div>
+            </div><!-- End Icon Box -->
+            <div class="col-lg-6 icon-box d-flex">
+              <i class="bi bi-check2"></i>
+              <div>
+                <p>Control options: winch, sensors, or radio</p>
+              </div>
+            </div><!-- End Icon Box -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- /Alt Services 2 Section -->
+
+  
+
+  <!-- Features Cards Section 2 -->
+  <section id="features-cards" class="features-cards section">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <h3>Rapid Doors</h3>
+          <p>Overlap offers cutting-edge industrial rapid doors for high-traffic environments, combining unmatched speed, safety, and insulation with innovative self-repair technology.</p>
+          <ul class="list-unstyled">
+            <li><i class="bi bi-check2"></i> <span>Cutting-edge technology for industrial rapid doors</span></li>
+            <li><i class="bi bi-check2"></i> <span>Unmatched speed and safety features</span></li>
+            <li><i class="bi bi-check2"></i> <span>Innovative self-repair technology for uninterrupted operation</span></li>
+          </ul>
+        </div><!-- End feature item-->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <h3>Glazings</h3>
+          <p>Elegant architectural solution seamlessly connecting indoor and outdoor spaces with sleek sliding doors, maximizing natural light, energy efficiency, and security, customizable to individual styles.</p>
+          <ul class="list-unstyled">
+            <li><i class="bi bi-check2"></i> <span>Effortless sliding mechanism for unobstructed views</span></li>
+            <li><i class="bi bi-check2"></i> <span>Floods interiors with natural light, enhancing ambiance</span></li>
+            <li><i class="bi bi-check2"></i> <span>Space-efficient access with stylish design, prioritizing security</span></li>
+          </ul>
+        </div><!-- End feature item-->
+      </div>
+    </div>
+  </section><!-- /Features Cards Section -->
+</main>
+
+{% endblock %}

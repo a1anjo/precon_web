@@ -1,0 +1,233 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Precon</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static "img/logoimage.png" %}" rel="icon">
+  <link href="{% static "img/logoimage.png" %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+  <link href="{% static "vendor/bootstrap-icons/bootstrap-icons.css" %}" rel="stylesheet">
+  <link href="{% static "vendor/aos/aos.css" %}" rel="stylesheet">
+  <link href="{% static "vendor/fontawesome-free/css/all.min.css" %}" rel="stylesheet">
+  <link href="{% static "vendor/glightbox/css/glightbox.min.css" %}" rel="stylesheet">
+  <link href="{% static "vendor/swiper/swiper-bundle.min.css" %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static "css/main.css" %}" rel="stylesheet">
+  <style>
+    #message{
+      height:230px;
+    }
+    .sitename .text {
+      display: inline-block;
+      position: relative;
+      line-height: 1; 
+    }
+    
+    .sitename .con {
+      font-weight: normal;
+    }
+    
+    .sitename .global {
+      font-size: 0.6em;
+      font-weight: normal;
+      position: absolute;
+      bottom: -15px; 
+      left: 0;
+    }
+    
+    /* Underline for the text */
+    .sitename .text:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: currentColor; /* Use text color as underline color */
+    }
+    
+    /* Styles for the header */
+    .header {
+      --background-color: rgba(255, 255, 255, 0);
+      --default-color: #ffffff;
+      --heading-color: #ffffff;
+      color: var(--default-color);
+      background-color: var(--background-color);
+      padding: 20px 0;
+      transition: all 0.5s;
+      z-index: 997;
+    }
+    
+    .header .logo img {
+      max-height: 40px;
+      margin-bottom:9px;
+    }
+    
+    .header .logo h1 {
+      font-size: 24px;
+      margin: 0;
+      font-weight: 700;
+      color: var(--heading-color);
+    }
+    
+    .header .logo span {
+      font-size: 24px;
+      padding-left: 1px;
+      font-family: var(--heading-font);
+      color: var(--color-primary);
+    }
+    
+    .scrolled .header {
+      box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+    }
+    
+    .scrolled .header {
+      --background-color: rgba(255, 255, 255, 0.95);
+      --heading-color: #3c3c3c;
+      --nav-color: #3c3c3c;
+      --nav-hover-color: #3c3c3c;
+    }
+    
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="{% url "index" %}" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        {% comment %} <img src="{% static "img/logo.png" %}" alt=""> {% endcomment %}
+
+        {% comment %} <img src="{% static 'img/logo1.png' %}" alt="" style="width: 200%; height: auto;"> {% endcomment %}
+
+        <h1 class="sitename">
+          <img src="{% static 'img/logoimage.png' %}" alt="">
+          <div class="text">
+            <b>PRE</b><span class="con">CON</span>
+              <div class="global">Global</div>
+          </div>
+      </h1>
+    </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{% url "index" %}">Home</a></li>
+          <li><a href="{% url "index" %}#get-started">About Us</a></li>
+          <li><a href="{% url "index" %}#services">Services</a></li>
+          <li class="dropdown"><a href="#features"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{% url "warema" %}">Warema</a></li>
+              <li><a href="{% url "overlap" %}">Delta Overlap</a></li>
+              <li><a href="{% url "origin" %}">Origin</a></li>
+              <li><a href="{% url "serge" %}">Serge Ferrari</a></li>
+              <li><a href="{% url "other_products" %}">Other Products</a></li>
+            </ul>
+          </li>
+          <li><a href="{% url "index" %}#projects">Gallery</a></li>
+          <li><a href="{% url "contact" %}">Contact Us</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+    {% block content %}
+
+    {% endblock content %}
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="{% url "index" %}" class="logo d-flex align-items-center">
+            <span class="sitename">PRECON GLOBAL</span>
+          </a>
+          <div class="footer-contact pt-3">
+           <h4> Dubai Division:</h4>
+           <p> SIT Towers, Dubai Silicon Oasis,</p>
+           <p> P O Box. 333438,</p>
+           <p> Office No. 1104, Dubai, UAE.</p>
+           <p ><strong>Phone:</strong> <span><a href="tel:+971 52 247 8304">+971 52 247 8304</a></span></p>
+            <p class="mt-3"><strong>Email:</strong> <span><a href="mailto:info@precon.com.kw">info@precon.com.kw</a></span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            {% comment %} <a href=""><i class="bi bi-twitter"></i></a> {% endcomment %}
+            {% comment %} <a href=""><i class="bi bi-facebook"></i></a> {% endcomment %}
+          <a href="https://www.instagram.com/preconglobal?igsh=djgyYzkzcWo5aGx5" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/precon-global/" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://wa.me/+919633251970"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 footer-links">
+          <br><br><br>
+          <h4> Indian Division:</h4>
+          <p>No. F-1107, Block-1, </p>
+           <p> First Floor Ardente Office One,<br> Hoodi Circle,ITPL Main Rd,<br> Bengaluru, Karnataka 560048</p>
+            <p><strong>Phone:</strong> <span><a href="tel:+91 994 6940 223">+91 994 6940 223</a></span></p>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <br><br><br>
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="{% url "index" %}">Home</a></li>
+            <li><a href="{% url "index" %}#get-started">About Us</a></li>
+            <li><a href="{% url "index" %}#services">Services</a></li>
+            <li><a href="{% url "index" %}#features">Products</a></li>
+            <li><a href="{% url "brouchere" %}">Get Info</a></li>
+            <li><a href="{% url "contact" %}">Contact Us</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <br><br><br>
+          
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+  <script src="{% static "vendor/php-email-form/validate.js" %}"></script>
+  <script src="{% static "vendor/aos/aos.js" %}"></script>
+  <script src="{% static "vendor/glightbox/js/glightbox.min.js" %}"></script>
+  <script src="{% static "vendor/imagesloaded/imagesloaded.pkgd.min.js" %}"></script>
+  <script src="{% static "vendor/isotope-layout/isotope.pkgd.min.js" %}"></script>
+  <script src="{% static "vendor/swiper/swiper-bundle.min.js" %}"></script>
+  <script src="{% static "vendor/purecounter/purecounter_vanilla.js" %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static "js/main.js" %}"></script>
+
+</body>
+
+</html>

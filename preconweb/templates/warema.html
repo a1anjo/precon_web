@@ -1,0 +1,436 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <style>
+
+    .btn-visit {
+        padding: 8px 40px;
+        background: var(--accent-color);
+        color: var(--contrast-color);
+        border-radius: 50px;
+        transition: 0.3s;
+        margin-left: 10%;
+    }
+    
+    .btn-visit:hover {
+        background: color-mix(in srgb, var(--accent-color), transparent 20%);
+        color: black; /* Change text color to black on hover */
+    }
+    
+</style>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade" style="background-image: url('{% static "img/warema/cover.jpg" %}');">
+      <div class="container position-relative">
+        <h1>
+          WAREMA
+        </h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url "index" %}">Home</a></li>
+            <li class="current">Warema</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Alt Services 2 Section -->
+    <section id="alt-services-2" class="alt-services-2 section">
+
+      <div class="container">
+
+        <div class="row justify-content-around gy-4">
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+            <h3 >Introduction</h3>
+            <p style="text-align:justify;">As the world's leading full-range sun shading systems
+                provider, Warema delivers an extensive range of state-of the-art solar shading solutions that provide the highest level
+                of living comfort and make the outside of your home look as
+                good as the inside. Spanning over 60 years, it has developed
+                innovative solutions that are flexible, sophisticated and
+                precisely tailored to the living trends of today.</p>
+            <h5>Products & Services</h5>
+            <p style="text-align:justify;">
+                With expertise in the field of Sunlight Management, the
+                WAREMA Group has extended the areas of application to
+                many other sectors:
+            </p>
+
+            <div class="row">
+
+              <div class="col-lg-6 icon-box d-flex">
+                <i class="bi bi-brightness-high flex-shrink-0"></i>
+                <div>
+                  <h4>Sun Shading and Control Systems</h4>
+                  <p>Covers all construction projects from single family homes to office towers.</p>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col-lg-6 icon-box d-flex">
+                <i class="bi bi-brightness-high flex-shrink-0"></i>
+                <div>
+                  <h4>Plastic Moulding Department</h4>
+                  <p>Develops and builds special
+                    machines and automation solutions for businesses that
+                    process plastics.</p>
+                </div>
+              </div><!-- End Icon Box -->
+              
+              <div class="col-lg-6 icon-box d-flex">
+                <i class="fas fa-car flex-shrink-0"></i>
+                <div>
+                  <h4>Automotive</h4>
+                  <p>Develops and manufactures plastic parts for
+                    the automotive industry, including technical and functional
+                    subassemblies as well as surface-finished interior elements.</p>
+                </div>
+              </div><!-- End Icon Box -->
+            </div>
+
+          </div>
+
+          <div class="features-image col-lg-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
+            <img src="{% static "img/warema/img main.jpg" %}" alt="">
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Alt Services 2 Section -->
+
+    <a href="https://configurator.warema.com/welcome" target="blank" class="btn-visit align-self-start">Configure Now <i class="bi bi-arrow-right"></i></a>
+
+    <!-- Alt Services 2 Section -->
+    <section id="alt-services-2" class="alt-services-2 section">
+
+        <div class="container">
+  
+          <div class="row justify-content-around gy-4">
+  
+            <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+              <h3 >Outdoor WAREMA Products</h3>
+              <p style="text-align:justify;">Do you want to let as much daylight into your home as possible? With the right
+                sun shading system you can create the perfect indoor climate and an optimal
+                energy balance. Large glass surfaces on the south and west-facing facades
+                can be shaded with our external venetian blinds and roller shutters - for
+                optimum summer heat protection and effective heat insulation in winter. The
+                perfect interplay between technology and nature! All our solutions can be
+                perfectly combined and are available in a range of designs and colours and in
+                special shapes.</p>
+              <div class="row">
+  
+                <div class="col-lg-6 icon-box d-flex">
+                  <i class="bi bi-brightness-high flex-shrink-0"></i>
+                  <div>
+                    <h4>External Venetian Blind</h4>
+                  </div>
+                </div><!-- End Icon Box -->
+  
+                <div class="col-lg-6 icon-box d-flex">
+                  <i class="bi bi-brightness-high flex-shrink-0"></i>
+                  <div>
+                    <h4>Roller Shutter</h4>
+                  </div>
+                </div><!-- End Icon Box -->
+  
+                <div class="col-lg-6 icon-box d-flex">
+                  <i class="bi bi-brightness-high flex-shrink-0"></i>
+                  <div>
+                    <h4>Window Awning</h4>
+                  </div>
+                </div><!-- End Icon Box -->
+
+                <div class="col-lg-6 icon-box d-flex">
+                    <i class="bi bi-brightness-high flex-shrink-0"></i>
+                    <div>
+                      <h4>Patio Awning</h4>
+                    </div>
+                  </div><!-- End Icon Box -->
+
+                  <div class="col-lg-6 icon-box d-flex">
+                    <i class="bi bi-brightness-high flex-shrink-0"></i>
+                    <div>
+                      <h4>Lamaxa Slat roof</h4>
+                    </div>
+                  </div><!-- End Icon Box -->
+
+                  <div class="col-lg-6 icon-box d-flex">
+                    <i class="bi bi-brightness-high flex-shrink-0"></i>
+                    <div>
+                      <h4> Shaft Roller Shutter</h4>
+                    </div>
+                  </div><!-- End Icon Box -->
+
+                  <div class="col-lg-6 icon-box d-flex">
+                    <i class="bi bi-brightness-high flex-shrink-0"></i>
+                    <div>
+                      <h4>Patio covers</h4>
+                    </div>
+                  </div><!-- End Icon Box -->
+   
+              </div>
+  
+            </div>
+  
+            <div class="features-image col-lg-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
+              <img src="{% static "img/warema/warema1.jpg" %}" alt="">
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </section><!-- /Alt Services 2 Section -->
+
+      
+       <!-- Features Cards Section -->
+       <section id="features-cards" class="features-cards section">
+
+        <div class="container">
+  
+          <div class="row gy-4">
+  
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <h3>External Venetian Blinding</h3>
+              <p>Discover the perfect blend of daylight and privacy with WAREMA external venetian blinds:</p>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check2"></i> <span>Customize sunlight incidence with individually adjustable slat angles</span></li>
+                <li><i class="bi bi-check2"></i> <span>Safeguard against unwanted visibility</span></li>
+                <li><i class="bi bi-check2"></i> <span>Tailor your blind to match your architectural facade, including special shapes</span></li>
+              </ul>
+            </div><!-- End feature item-->
+  
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <h3>Roller Shutter</h3>
+              <p>WAREMA's vertical louvre blinds provide stylish and versatile sun shading for various window types.</p>
+  
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check2"></i> <span>Elegant Design: Enhances aesthetic appeal of living and working spaces.</span></li>
+                <li><i class="bi bi-check2"></i> <span>Versatile Application: Suitable for large, curved, and non-rectangular windows.</span></li>
+                <li><i class="bi bi-check2"></i> <span>Custom Solutions: Made-to-measure for individual needs and preferences.</span></li>
+              </ul>
+            </div><!-- End feature item-->
+  
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <h3>Window awnings</h3>
+              <p>WAREMA's easyZIP window awnings offer versatility and durability for any facade.</p>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check2"></i> <span>Withstands winds up to 150 km/h with stable guide rails.</span></li>
+                <li><i class="bi bi-check2"></i> <span>Customizable Design: Offers countless color options for personalized facade designs.</span></li>
+                <li><i class="bi bi-check2"></i> <span>Durable and Functional: Sturdy, weatherproof fabrics ensure long-lasting performance and visual lightness.</span></li>
+              </ul>
+            </div><!-- End feature item-->
+  
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+              <h3>Patio awning</h3>
+              <p>Customize your patio with WAREMA awnings for shade and style.</p>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check2"></i> <span>Versatile Comfort: Enjoy shade for tea parties or reading.</span></li>
+                <li><i class="bi bi-check2"></i> <span>Outdoor Appeal: Transform your patio into an attractive space.</span></li>
+                <li><i class="bi bi-check2"></i> <span>Customizable: Choose shape and color to match your style.</span></li>
+              </ul>
+            </div><!-- End feature item-->
+  
+          </div>
+  
+        </div>
+  
+      </section><!-- /Features Cards Section -->
+
+       <!-- Features Cards Section 2  -->
+       <section id="features-cards" class="features-cards section">
+
+        <div class="container">
+  
+          <div class="row gy-4">
+  
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <h3>Lamaxa slat roofs</h3>
+              <p>Lamaxa slat roofs offer stylish shading and rain protection for open spaces.</p>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check2"></i> <span>Versatile Design: Wide range of colors and models for individual preferences.</span></li>
+                <li><i class="bi bi-check2"></i> <span>Weather Protection: Safely shields from sun and rain with flexible slats.</span></li>
+                <li><i class="bi bi-check2"></i> <span>Outdoor Comfort: Enjoy nature in a sheltered, customizable outdoor space.</span></li>
+              </ul>
+            </div><!-- End feature item-->
+  
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <h3>Shaft Roller Shutter</h3>
+              <p>WAREMA's shaft roller shutter systems offer easy installation and reliable sun shading.</p>
+  
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check2"></i> <span>Functional Design: Contemporary style and quality.</span></li>
+                <li><i class="bi bi-check2"></i> <span>Easy Installation: Utilize existing shafts for new or renovated buildings.</span></li>
+                <li><i class="bi bi-check2"></i> <span>Seamless Integration: Minimax guide rails blend well into your facade.</span></li>
+              </ul>
+            </div><!-- End feature item-->
+  
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <h3>Patio covers</h3>
+              <p>Ensure your patio's protection with high-grade covers by WAREMA.</p>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check2"></i> <span>Wind Stability: Essential for durability, allowing use even on windy days.</span></li>
+                <li><i class="bi bi-check2"></i> <span>Long-Lasting Functionality: WAREMA's covers ensure reliable patio shading.</span></li>
+               <li><i class="bi bi-check2"></i> <span>Comfort Assurance: Enjoy comfort even during rain or storms.</span></li>
+              </ul>
+            </div><!-- End feature item-->
+  
+          </div>
+  
+        </div>
+  
+      </section><!-- /Features Cards Section -->
+
+    <!-- Alt Services 2 Section -->
+    <section id="alt-services-2" class="alt-services-2 section">
+
+      <div class="container">
+
+        <div class="row justify-content-around gy-4">
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+            <h3 >Wings Professional Project GmbH - High-Quality Products from Lubeck</h3>
+            <p style="text-align:justify;">The Iiibeck-based WAREMA subsidiary, Wings Professional Project GmbH
+              develops and manufactures high-grad aesthetically sophisticated solutions for
+              sun shading technology, facade design and daylight control technology.
+              With a high degree of innovation, exceptional product quality and
+              comprehensive service offer, the company ensures i seamless integration into
+              the WAREMA Group and perfects the product spectrum of the full-range
+              provider</p>
+            <p><b>Large Slats</b></p>
+            <div class="row">
+
+              <div class="col-lg-6 icon-box d-flex">
+                <i class="bi bi-brightness-high flex-shrink-0"></i>
+                <div>
+                  <h4>Sophisticated-Create the best light conditions and improve the energy efficiency</h4>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col-lg-6 icon-box d-flex">
+                <i class="bi bi-brightness-high flex-shrink-0"></i>
+                <div>
+                  <h4>Attractive - Give your facade the perfect look</h4>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col-lg-6 icon-box d-flex">
+                <i class="bi bi-brightness-high flex-shrink-0"></i>
+                <div>
+                  <h4>Safe - Safe & stable even in high positions</h4>
+                </div>
+              </div><!-- End Icon Box -->
+
+            </div>
+
+          </div>
+
+          <div class="features-image col-lg-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
+            <img src="{% static "img/warema/warema3.jpg" %}" alt="">
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Alt Services 2 Section -->
+
+
+      <!-- Alt Services 2 Section -->
+      <section id="alt-services-2" class="alt-services-2 section">
+
+        <div class="container">
+  
+          <div class="row justify-content-around gy-4">
+  
+            <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+              <h3 >CONTROL SYSTEMS Clever & Fully Automated</h3>
+              <p style="text-align:justify;">Experience effortless climate control with WAREMA's 
+                innovative automation systems. From radio to centralized and networked controls,
+                 our solutions cater to residential and commercial needs, ensuring an ideal environment 
+                 while maximizing energy efficiency. Elevate your sun shading experience with WAREMA,
+                  the market leader in shading solutions.</p>
+                <p><b>  Control Systems </b></p>
+              <div class="row">
+                <div class="col-lg-6 icon-box d-flex">
+                  <i class="fa-solid fa-check-square"></i>
+                  <div>
+                    <h4>Smart Home Automated sun shading system</h4>
+                  </div>
+                </div><!-- End Icon Box -->
+  
+                <div class="col-lg-6 icon-box d-flex">
+                  <i class="fa-solid fa-check-square"></i>
+                  <div>
+                    <h4>Radio systems Comfortable control</h4>
+                  </div>
+                </div><!-- End Icon Box -->
+  
+                <div class="col-lg-6 icon-box d-flex">
+                  <i class="fa-solid fa-check-square"></i>
+                  <div>
+                    <h4>Central control systems</h4>
+                  </div>
+                </div><!-- End Icon Box -->
+
+                <div class="col-lg-6 icon-box d-flex">
+                  <i class="fa-solid fa-check-square"></i>
+                    <div>
+                      <h4>Patio Awning</h4>
+                    </div>
+                  </div><!-- End Icon Box -->
+
+                  <div class="col-lg-6 icon-box d-flex">
+                    <i class="fa-solid fa-check-square"></i>
+                    <div>
+                      <h4>Motor control units</h4>
+                    </div>
+                  </div><!-- End Icon Box -->
+
+                  <div class="col-lg-6 icon-box d-flex">
+                    <i class="fa-solid fa-check-square"></i>
+                    <div>
+                      <h4> WAREMA climatronic</h4>
+                    </div>
+                  </div><!-- End Icon Box -->
+
+                  <div class="col-lg-6 icon-box d-flex">
+                    <i class="fa-solid fa-check-square"></i>
+                    <div>
+                      <h4>Bus systems KNX/Lon Works.</h4>
+                    </div>
+                  </div><!-- End Icon Box -->
+
+                  <div class="col-lg-6 icon-box d-flex">
+                    <i class="fa-solid fa-check-square"></i>
+                    <div>
+                      <h4>BAline</h4>
+                    </div>
+                  </div><!-- End Icon Box -->
+
+                  <div class="col-lg-6 icon-box d-flex">
+                    <i class="fa-solid fa-check-square"></i>
+                    <div>
+                      <h4>Sensor</h4>
+                    </div>
+                  </div><!-- End Icon Box -->
+   
+              </div>
+  
+            </div>
+  
+            <div class="features-image col-lg-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
+              <img src="{% static "img/warema/warema1.jpg" %}" alt="">
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </section><!-- /Alt Services 2 Section -->
+  
+  </main>
+{% endblock %}

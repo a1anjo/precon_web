@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <style>
+
+    .btn-visit {
+        padding: 8px 40px;
+        background: var(--accent-color);
+        color: var(--contrast-color);
+        border-radius: 50px;
+        transition: 0.3s;
+        margin-left: 10%;
+    }
+    
+    .btn-visit:hover {
+        background: color-mix(in srgb, var(--accent-color), transparent 20%);
+        color: black; /* Change text color to black on hover */
+    }
+    
+</style>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade" style="background-image: url('{% static "img/origin/origin-main.jpg" %}');">
+      <div class="container position-relative">
+        <h1>
+          ORIGIN
+        </h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url "index" %}">Home</a></li>
+            <li class="current">Origin</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Alt Services 2 Section -->
+    <section id="alt-services-2" class="alt-services-2 section">
+
+      <div class="container">
+
+        <div class="row justify-content-around gy-4">
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+            <h3 >Introduction</h3>
+            <p style="text-align:justify;">
+                Origin Global is a British company specializing in the design and manufacture of high-quality aluminum doors and windows.
+            </p>
+            <p style="text-align:justify;">
+                Origin Global's product range includes bi-fold doors, sliding doors, and residential doors, as well as windows and various accessories. The company's products are known for their durability, energy efficiency, and aesthetic appeal. They are often customizable, allowing for a range of configurations and finishes to meet customer specifications.
+            </p>
+            <p style="text-align:justify;">
+                The company operates primarily in the UK but has expanded its market reach internationally, including the United States and other countries. Origin Global prides itself on its rigorous quality control processes and commitment to sustainable practices, utilizing recyclable materials and implementing energy-efficient manufacturing processes.
+            </p>
+        </div>
+
+          <div class="features-image col-lg-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
+            <img src="{% static "img/origin/origin-2.jpg" %}" alt="">
+          </div>
+
+        </div>
+        <a href="https://origin-global.com/" target="blank" data-aos="fade-up" data-aos-delay="100" class="btn-visit align-self-start">Know More <i class="bi bi-arrow-right"></i></a>
+
+    </div>
+
+    </section><!-- /Alt Services 2 Section -->
+
+    <p></p>
+</main>
+{% endblock %}

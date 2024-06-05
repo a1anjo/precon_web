@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade" style="background-image: url({% static 'img/contact-bg.jpeg' %});">
+      <div class="container position-relative">
+        <h1>Contact</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url "index" %}">Home</a></li>
+            <li class="current">Contact</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+
+ <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt"></i>
+              <h4> Dubai Branch</h4>
+                <p> SIT Towers, Dubai Silicon Oasis, Office No. 1104,</p>
+                  <p> P O Box. 333438, Dubai, UAE.</p>
+                <p ><strong>Phone:</strong> <span><a href="tel:+971 52 247 8304">+971 52 247 8304</a></span></p>
+            </p>
+
+            </div>
+          </div><!-- End Info Item -->
+          <div class="col-lg-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone"></i>
+              <h4>Indian Branch</h4>
+              <p>No. F-1107, Block-1, First Floor Ardente Office One,</p>
+              <p>Hoodi Circle,ITPL Main Rd, Bengaluru, Karnataka 560048</p>
+              <p><strong>Phone:</strong> <span><a href="tel:+91 994 6940 223">+91 994 6940 223</a></span></p>
+            </div>
+          </div><!-- End Info Item -->
+        </div>
+    
+        <div class="row gy-4 mt-1">
+          <div class="col-lg-6">
+
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope"></i>
+              <h3>Email Us</h3>
+              <p>info@precon.com.kw</p>
+            </div>
+          <br>
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-whatsapp" style="color: green;"></i>
+              <h3> <a href="https://wa.me/+919633251970">Message Us on WhatsApp</a></h3>
+            </div>
+            <br>
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-linkedin" style="color: blue;"></i>             
+              <h3><a href="https://www.linkedin.com/company/precon-global/" target="_blank">Connect with Us on LinkedIn</a></h3>
+            </div>
+            <br>
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="600">
+              <i class="bi bi-instagram" style="color: red;"></i>
+              <h3><a href="https://www.instagram.com/preconglobal?igsh=djgyYzkzcWo5aGx5" target="_blank">Follow us on Instagram</a></h3>
+            </div>
+          </div><!-- End Info Item -->
+    
+          <div class="col-lg-6">
+            <form action="{% url 'send_message' %}" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="400" role="form" onsubmit="return validateForm()" id="contact-form">
+              {% csrf_token %}
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  <span class="error-message" id="name-error"></span>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  <span class="error-message" id="email-error"></span>
+                </div>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                  <span class="error-message" id="subject-error"></span>
+                </div>
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" id="message" rows="6" placeholder="Message" required></textarea>
+                  <span class="error-message" id="message-error"></span>
+                </div>
+                <div class="col-md-12 text-center">
+                  <button type="submit">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+        </div>
+      </div>
+    </section><!-- /Contact Section -->
+
+    <script>
+      // Function to validate the name field
+      function validateName() {
+        var nameInput = document.getElementById("name");
+        var name = nameInput.value.trim();
+        var nameError = document.getElementById("name-error");
+    
+        if (!/^[A-Za-z][A-Za-z\s]*[A-Za-z]$/.test(name)) {
+          nameError.textContent = "Name should start and end with letters and should not contain numbers.";
+          return false;
+        } else {
+          nameError.textContent = "";
+          return true;
+        }
+      }
+    
+      // Function to validate the email field
+      function validateEmail() {
+        var emailInput = document.getElementById("email");
+        var email = emailInput.value.trim();
+        var emailError = document.getElementById("email-error");
+    
+        if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+          emailError.textContent = "Invalid email address";
+          return false;
+        } else {
+          emailError.textContent = "";
+          return true;
+        }
+      }
+    
+      // Function to validate the subject field
+      function validateSubject() {
+        var subjectInput = document.getElementById("subject");
+        var subject = subjectInput.value.trim();
+        var subjectError = document.getElementById("subject-error");
+    
+        if (subject.length === 0) {
+          subjectError.textContent = "Subject cannot be empty.";
+          return false;
+        } else {
+          subjectError.textContent = "";
+          return true;
+        }
+      }
+    
+      // Function to validate the message field
+      function validateMessage() {
+        var messageInput = document.getElementsByName("message")[0];
+        var message = messageInput.value.trim();
+        var messageError = document.getElementById("message-error");
+    
+        if (message.length === 0) {
+          messageError.textContent = "Message cannot be empty.";
+          return false;
+        } else {
+          messageError.textContent = "";
+          return true;
+        }
+      }
+    
+      // Function to validate the entire form
+      function validateForm() {
+        return validateName() && validateEmail() && validateSubject() && validateMessage();
+      }
+    
+      // Add event listeners for live validation
+      document.getElementById("name").addEventListener("input", validateName);
+      document.getElementById("email").addEventListener("input", validateEmail);
+      document.getElementById("subject").addEventListener("input", validateSubject);
+      document.getElementsByName("message")[0].addEventListener("input", validateMessage);
+    </script>
+    
+{% endblock %}

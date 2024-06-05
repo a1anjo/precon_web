@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade" style="background-image: url({% static "img/broucher-back.jpg" %});">
+      <div class="container position-relative">
+        <h1 class="">BROCHURE</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Brochure</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Starter Section Section -->
+    <section id="starter-section" class="starter-section section">
+
+      <div class="container" data-aos="fade-up">
+
+            <iframe src="{% static 'Precon Global Profile.pdf' %}" width="100%" height="500px"></iframe>
+    
+      </div>
+
+    </section><!-- /Starter Section Section -->
+
+  </main>
+
+{% endblock %}

@@ -1,0 +1,1003 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Precon</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static "img/logoimage.png" %}" rel="icon">
+  <link href="{% static "img/logoimage.png" %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+  <link href="{% static "vendor/bootstrap-icons/bootstrap-icons.css" %}" rel="stylesheet">
+  <link href="{% static "vendor/aos/aos.css" %}" rel="stylesheet">
+  <link href="{% static "vendor/fontawesome-free/css/all.min.css" %}" rel="stylesheet">
+  <link href="{% static "vendor/glightbox/css/glightbox.min.css" %}" rel="stylesheet">
+  <link href="{% static "vendor/swiper/swiper-bundle.min.css" %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static "css/main.css" %}" rel="stylesheet">
+  <style>
+    #message{
+      height:230px;
+    }
+    .sitename .text {
+      display: inline-block;
+      position: relative;
+      line-height: 1; 
+    }
+    
+    .sitename .con {
+      font-weight: normal;
+    }
+    
+    .sitename .global {
+      font-size: 0.6em;
+      font-weight: normal;
+      position: absolute;
+      bottom: -15px; 
+      left: 0;
+    }
+    
+    /* Underline for the text */
+    .sitename .text:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: currentColor; /* Use text color as underline color */
+    }
+    
+    /* Styles for the header */
+    .header {
+      --background-color: rgba(255, 255, 255, 0);
+      --default-color: #ffffff;
+      --heading-color: #ffffff;
+      color: var(--default-color);
+      background-color: var(--background-color);
+      padding: 20px 0;
+      transition: all 0.5s;
+      z-index: 997;
+    }
+    
+    .header .logo img {
+      max-height: 40px;
+      margin-bottom:9px;
+    }
+    
+    .header .logo h1 {
+      font-size: 24px;
+      margin: 0;
+      font-weight: 700;
+      color: var(--heading-color);
+    }
+    
+    .header .logo span {
+      font-size: 24px;
+      padding-left: 1px;
+      font-family: var(--heading-font);
+      color: var(--color-primary);
+    }
+    
+    .scrolled .header {
+      box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+    }
+    
+    .scrolled .header {
+      --background-color: rgba(255, 255, 255, 0.95);
+      --heading-color: #3c3c3c;
+      --nav-color: #3c3c3c;
+      --nav-hover-color: #3c3c3c;
+    }
+    
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+
+        {% comment %} <img src="{% static 'img/logo1.png' %}" alt="" style="width: 200%; height: auto;"> {% endcomment %}
+
+        <h1 class="sitename">
+          <img src="{% static 'img/logoimage.png' %}" alt="">
+          <div class="text">
+            <b>PRE</b><span class="con">CON</span>
+              <div class="global">Global</div>
+          </div>
+      </h1>
+    </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{% url "index" %}">Home</a></li>
+          <li><a href="#get-started">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Gallery</a></li>
+          <li class="dropdown"><a href="#features"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{% url "warema" %}">Warema</a></li>
+              <li><a href="{% url "overlap" %}">Delta Overlap</a></li>
+              <li><a href="{% url "origin" %}">Origin</a></li>
+              <li><a href="{% url "serge" %}">Serge Ferrari</a></li>
+              <li><a href="{% url "other_products" %}">Other Products</a></li>
+            </ul>
+          </li>
+          <li><a href="{% url "contact" %}">Contact Us</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <!--<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+        <BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>-->
+    <div class="info d-flex align-items-center">
+        <div class="container">
+          <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-6 text-center">
+               <h2 class="">Privacy is Luxury</h2> 
+              <p>Get in touch with our design consultants today to discover personalized 
+                solutions crafted specifically for your needs. Let us help you bring your 
+                vision to life with our expert guidance and bespoke designs. </p>
+            
+               <a href="{% url "brouchere" %}" class="btn-get-started">Discover the essence of our enterprise</a> 
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <div id="section-fqREP4OWmC-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+        {% comment %} <div class="carousel-item">
+          <img src="{% static "img/hero-carousel/corouselmain.png" %}" alt="">
+        </div> {% endcomment %}
+
+        <div class="carousel-item">
+          <img src="{% static "img/hero-carousel/carousel1.png" %}" alt="">
+        </div>
+
+        <!--<div class="carousel-item">
+          <img src="{% static "img\hero-carousel\corouselmain.png" %}" alt="">
+        </div>-->
+
+        <div class="carousel-item active">
+          <img src="{% static "img/hero-carousel/carousel2.png" %}" alt="">
+        </div>
+
+        <div class="carousel-item">
+          <img src="{% static "img/hero-carousel/carousel3.png" %}" alt="">
+        </div>
+
+        <a class="carousel-control-prev" href="#section-fqREP4OWmC-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#section-fqREP4OWmC-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Get Started Section -->
+    <section id="get-started" class="get-started section">
+
+      <div class="container">
+
+        <div class="row justify-content-between gy-4">
+
+          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+            <div class="content">
+              <h3>About us</h3>
+              <p style="text-align:justify;">Founded in 2016, we are a multi-disciplinary firm committed to becoming the leading trading company in the UAE, Kuwait, Bahrain, Qatar, Saudi Arabia, and India. Our strong business culture and dynamic team drive our continual growth and pursuit of a prosperous future.
+              </p>
+              <p style="text-align:justify;">  
+             We offer diverse services, including operations, engineering, procurement, façade works, and logistics. With a presence across the UAE, GCC, and Asia Pacific, our proven track record shows our ability to meet clients' needs, offering value-added services that support their business growth.
+              </p>    
+              </div>
+          </div>
+
+          <div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{% static 'img/hero-carousel/corouselmain.png' %}" alt="" style="width: 100%; height: auto;">
+          </div><!-- End Quote Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Get Started Section -->
+
+    <!-- Constructions Section -->
+    <section id="constructions" class="constructions section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 class="">PRESTIGIOUS PROJECTS</h2>
+        <p>Delivering exceptional engineering, procurement, and façade projects across the GCC and Asia.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg"><img src="{% static "img\Louvre-Museum-Abu-Dhabi-Aerial-View-1200x600.jpg" %}" alt=""></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title">LOUVRE MUSEUM</h4>
+                    <b>Saadiyat Island, Abu Dhabi</b>
+                    <p>Our enduring collaboration with the iconic Louvre Museum 
+                       marked by a multifaceted project that encapsulates our 
+                       commitment to the preservation and enhancement of this global cultural Treasure.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg"><img src="{% static "img/galleria.jpg" %}" alt=""></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title">APPLE STORE</h4>
+                    <b>The Galleria,Abu Dhabi</b>
+                      <p>
+                      We delivered advanced
+                      shading systems to Abu
+                      Dhabi's Apple Store and
+                      currently manage their
+                      comprehensive maintenance
+                      services.<br><br></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg"><img src="{% static "img/apple-mumbai.jpg" %}" alt=""></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title">APPLE STORE</h4>
+                    <b>Bandra Complex,Mumbai</b>
+                    <p>We supplied shading systems
+                      to the Apple Store in Mumbai
+                      and continue to provide
+                      maintenance services to
+                      ensure their optimal
+                      performance and appearance.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card Item -->
+
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg"><img src="{% static "img\arcapita_1575x900_andreaskeller_04jpg-1366x780-c.jpg" %}" alt=""></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title">ARCAPITA</h4>
+                    <b>Manama, Bahrain</b>
+                    <p> We provided complete shading systems for the headquarters of Arcapita, a Bahrain-based investment and infrastructure firm.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Constructions Section -->
+
+    <!--div for services-->
+    <div class="container section-title" data-aos="fade-up">
+      <h2 class="">SERVICES</h2>
+ <!--end for services-->
+
+    </div><!-- End Section Title -->
+    <!-- Alt Services Section -->
+    <section id="alt-services" class="alt-services section" >
+
+      <div class="container" id="services">
+
+        <div class="row justify-content-around gy-4">
+          <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100"><img src="{% static "img/service-cover.jpeg" %}" alt=""></div>
+
+          <div class="col-lg-5 d-flex flex-column" data-aos="fade-up" data-aos-delay="200">
+            <h3 id="SDC">Our Services Encompasses:</h3>
+            <p>Ensuring Excellence from Supply to Maintenance</p>
+
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-easel flex-shrink-0"></i>
+              <div>
+                <h4><a href="#SDC" class="stretched-link">Supply and Design of Components:</a></h4>
+                <p>We provide top-quality components and design solutions
+                  to meet the diverse needs of our customers.</p>
+              </div>
+            </div><!-- End Icon Box -->
+
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-patch-check flex-shrink-0"></i>
+              <div>
+                <h4><a href="#SDC" class="stretched-link">Installation, Testing, and Commissioning:</a></h4>
+                <p>Our team handles the entire process, from installation to
+                  thorough testing and commissioning of the chosen solution.</p>
+              </div>
+            </div><!-- End Icon Box -->
+
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-tools flex-shrink-0"></i>
+              <div>
+                <h4><a href="#SDC" class="stretched-link">Continuous Maintenance during the Warranty Period:</a></h4>
+                <p>We offer ongoing maintenance services throughout the
+                  warranty period to ensure optimal performance and longevity
+                  of the systems.</p>
+              </div>
+            </div><!-- End Icon Box -->
+
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-file-earmark-text flex-shrink-0"></i>
+              <div>
+                <h4><a href="#SDC" class="stretched-link">Annual Maintenance Contracts:</a></h4>
+                <p>To preserve the robust functionality of the system, we offer annual
+                  maintenance contracts. These contracts contribute to the sustained
+                  wellbeing of the system.
+                  </p>
+              </div>
+            </div><!-- End Icon Box -->
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Alt Services Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>PRODUCTS</h2>
+        <p>Welcome to the dynamic and dedicated community of associates at our esteemed company.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <ul class="nav nav-tabs row  g-2 d-flex" data-aos="fade-up" data-aos-delay="100" role="tablist">
+
+          <li class="nav-item col-3" role="presentation">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1" aria-selected="true" role="tab">
+              <h4>WAREMA</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
+          <li class="nav-item col-3" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2" aria-selected="false" tabindex="-1" role="tab">
+              <h4>ORIGIN</h4>
+            </a><!-- End tab nav item -->
+
+          </li>
+          <li class="nav-item col-3" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3" aria-selected="false" tabindex="-1" role="tab">
+              <h4>SERGE FERRARI</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
+          <li class="nav-item col-3" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4" aria-selected="false" tabindex="-1" role="tab">
+              <h4>DELTA OVERLAP</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
+          <li class="nav-item col-3" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-5" aria-selected="false" tabindex="-1" role="tab">
+              <h4>OTHER PRODUCTS</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
+          
+        </ul>
+
+        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="tab-pane fade active show" id="features-tab-1" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3 class="">Warema</h3>
+                <p class="fst-italic" style="text-align: justify;">
+                  Precon's association with Warema helps us to offer
+                  innovative, high-grade sun shading solutions from a single
+                  source. Whether for the home or the office, for indoors or
+                  outdoors,Warema's automatically controlled sun shading
+                  systems have an impact on the people's quality of life and on
+                  the energy efficiency of buildings.
+                </p>
+                <p>
+                <a href="{% url "warema" %}"class="readmore">Know more <i class="bi bi-arrow-right"></i></a>
+                </p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="{% static "img/features/Warema.jpg" %}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+
+          <div class="tab-pane fade" id="features-tab-2" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Origin</h3>
+                <p class="fst-italic" style="text-align: justify;">    
+                Origin Global, a product of Precon Global, designs and crafts premium aluminum doors and windows,
+                 known for durability, energy efficiency, and customization. Operating in the UK and internationally,
+                  they prioritize quality control and sustainability, using recyclable materials and energy-efficient processes.
+                </p>
+                <p>
+                  <a href="{% url "origin" %}"class="readmore">Know more <i class="bi bi-arrow-right"></i></a>
+                  </p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="{% static "img/features/origin.jpg" %}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+
+          <div class="tab-pane fade" id="features-tab-3" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Serge Ferrari</h3>
+                <p class="fst-italic" style="text-align: justify;">
+                Serge Ferrari, a French pioneer in advanced composite materials for architecture,
+                marine, furniture, and environmental applications. Recognized for durability, sustainability, 
+                and worldwide reach.
+                </p>
+                <p>
+                  <a href="{% url "serge" %}"class="readmore">Know more <i class="bi bi-arrow-right"></i></a>
+                  </p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="{% static "img/features/serge.jpg" %}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+
+          <div class="tab-pane fade" id="features-tab-4" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Overlap</h3>
+                <p class="fst-italic" style="text-align: justify;">
+                  Delta Overlap is an Italian company, manufacturing of
+                  garage door residential, it is already a leading manufacturer
+                  and industry reference within the high and residential garage
+                  door market with a dedicated production facility and highly
+                  skilled staff.<br>
+                  “Overlap” is an innovative concept that does not require the
+                  ceiling tracks and reduces the space occupied inside the
+                  garage. The operator is housed in the upper beam of the
+                  door frame.
+                </p>
+                <p>
+                  <a href="{% url "overlap" %}"class="readmore">Know more <i class="bi bi-arrow-right"></i></a>
+                  </p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="{% static "img/features/overlap.png" %}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+
+          <div class="tab-pane fade" id="features-tab-5" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Other Products</h3>
+                <p class="fst-italic" style="text-align: justify;">
+                  Discover our wide range of specialized products designed to enhance safety,
+                   comfort, and efficiency in various environments. From fireproof curtains
+                    and sun shades to industrial filters and advanced engineering solutions,
+                     we offer top-quality items from trusted brands like Hart, Coopers,
+                      Airtechz, Caravita, Collbaix, Anwis. Explore our selection to find the 
+                       perfect products tailored to your needs. 
+                </p>
+                <p>
+                  <a href="{% url "other_products" %}"class="readmore">Know more <i class="bi bi-arrow-right"></i></a>
+                  </p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="{% static "img/features/other_products.jpg" %}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Features Section --> 
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 class="">Gallery</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          {% comment %} <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+          <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-repairs">Precon</li>
+            <li data-filter=".filter-remodeling">Warema</li>
+            <li data-filter=".filter-construction">Overlap</li>
+           <li data-filter=".filter-repairs">Repairs</li>
+            <li data-filter=".filter-design">Design</li>  
+          </ul><!--End Portfolio Filters--> {% endcomment %}
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
+              <div class="portfolio-content h-100">
+                <img src="{% static "img\Portfolio\gallery3.png" %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static "img\Portfolio\gallery3.png" %}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
+              <div class="portfolio-content h-100">
+                <img src="{% static "img\Portfolio\gallery2.png" %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static "img\Portfolio\gallery2.png" %}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
+              <div class="portfolio-content h-100">
+                <img src="{% static "img\Portfolio\gallery4.png" %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static "img\Portfolio\gallery4.png" %}"  data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            {% comment %} <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
+              <div class="portfolio-content h-100">
+                <img src="{% static "img/projects/design-1.jpg" %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                 
+                  
+                  <a href="{% static "img/projects/design-1.jpg" %}" title="Precon" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item --> {% endcomment %}
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
+              <div class="portfolio-content h-100">
+                <img src="{% static "img\Portfolio\gallery5.png" %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static "img\Portfolio\gallery5.png" %}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
+              <div class="portfolio-content h-100">
+                <img src="{% static "img\Portfolio\gallery6.png" %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static "img\Portfolio\gallery6.png" %}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
+              <div class="portfolio-content h-100">
+                <img src="{% static "img\Portfolio\gallery7.png" %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static "img\Portfolio\gallery7.png" %}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+            
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
+              <div class="portfolio-content h-100">
+                <img src="{% static "img\Portfolio\gallery8.png" %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static "img\Portfolio\gallery8.png" %}"  data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            {% comment %} <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
+              <div class="portfolio-content h-100">
+                <img src="{% static "img/projects/design-2.jpg" %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                <a href="{% static "img/projects/design-2.jpg" %}" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  
+              </div>
+            </div><!-- End Portfolio Item --> {% endcomment %}
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
+              <div class="portfolio-content h-100">
+                <img src="{% static "img\Portfolio\gallery9.png" %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static "img\Portfolio\gallery9.png" %}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
+              <div class="portfolio-content h-100">
+                <img src="{% static "img\Portfolio\gallery12.png" %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static "img\Portfolio\gallery12.png" %}"  data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
+              <div class="portfolio-content h-100">
+                <img src="{% static "img\Portfolio\gallery13.png" %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static "img\Portfolio\gallery13.png" %}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-remodeling">
+              <div class="portfolio-content h-100">
+                <img src="{% static "img\Portfolio\gallery14.png" %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static "img\Portfolio\gallery14.png" %}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
+              <div class="portfolio-content h-100">
+                <img src="{% static "img\Portfolio\gallery24.png" %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static "img\Portfolio\gallery24.png" %}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
+              <div class="portfolio-content h-100">
+                <img src="{% static "img\Portfolio\gallery20.png" %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static "img\Portfolio\gallery20.png" %}"  data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repairs">
+              <div class="portfolio-content h-100">
+                <img src="{% static "img\Portfolio\gallery19.png" %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static "img\Portfolio\gallery19.png" %}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
+              <div class="portfolio-content h-100">
+                <img src="{% static "img\Portfolio\gallery22.png" %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="{% static "img\Portfolio\gallery22.png" %}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+        
+
+            {% comment %} <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
+              <div class="portfolio-content h-100">
+                <img src="{% static "img/projects/design-3.jpg" %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Books 3</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="{% static "img/projects/design-3.jpg" %}" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item --> {% endcomment %}
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Projects Section -->
+  
+    <!-- Contact Section -->
+ <!-- Contact Section -->
+ <section id="contact" class="contact section">
+
+       <!-- Section Title -->
+       <div class="container section-title" data-aos="fade-up">
+        <h2 class="">Contact Us</h2>
+      </div><!-- End Section Title -->
+
+
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-6">
+        <div class="info-item d-flex flex-column justify-content-center align-items-center">
+          <i class="bi bi-geo-alt"></i>
+          <h4> Dubai Division</h4>
+            <p> SIT Towers, Dubai Silicon Oasis, Office No. 1104,</p>
+              <p> P O Box. 333438, Dubai, UAE.</p>
+            <p ><strong>Phone:</strong> <span><a href="tel:+971 52 247 8304">+971 52 247 8304</a></span></p>
+        </p>
+
+        </div>
+      </div><!-- End Info Item -->
+      <div class="col-lg-6">
+        <div class="info-item d-flex flex-column justify-content-center align-items-center">
+          <i class="bi bi-telephone"></i>
+          <h4>Indian Division</h4>
+          <p>No. F-1107, Block-1, First Floor Ardente Office One,</p>
+          <p>Hoodi Circle,ITPL Main Rd, Bengaluru, Karnataka 560048</p>
+          <p><strong>Phone:</strong> <span><a href="tel:+91 96332 51970">+91 96332 51970</a></span></p>
+        </div>
+      </div><!-- End Info Item -->
+    </div>
+
+    <div class="row gy-4 mt-1">
+      <div class="col-lg-6">
+
+        <div class="info-item d-flex flex-column justify-content-center align-items-center" >
+          <i class="bi bi-envelope"></i>
+          <h3>Email Us</h3>
+          <p>info@precon.com.kw</p>
+        </div>
+      <br>
+        <div class="info-item d-flex flex-column justify-content-center align-items-center">
+          <i class="bi bi-whatsapp" style="color: green;"></i>
+          <h3> <a href="https://wa.me/+919633251970">Message Us on WhatsApp</a></h3>
+        </div>
+        <br>
+        <div class="info-item d-flex flex-column justify-content-center align-items-center">
+          <i class="bi bi-linkedin" style="color: blue;"></i>             
+          <h3><a href="https://www.linkedin.com/company/precon-global/" target="_blank">Connect with Us on LinkedIn</a></h3>
+        </div>
+        <br>
+        <div class="info-item d-flex flex-column justify-content-center align-items-center">
+          <i class="bi bi-instagram" style="color: red;"></i>
+          <h3><a href="https://www.instagram.com/preconglobal?igsh=djgyYzkzcWo5aGx5" target="_blank">Follow us on Instagram</a></h3>
+        </div>
+      </div><!-- End Info Item -->
+
+      <div class="col-lg-6">
+        <form action="{% url 'send_message' %}" method="post" class="php-email-form" role="form" onsubmit="return validateForm()" id="contact-form">
+          {% csrf_token %}
+          <div class="row gy-4">
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              <span class="error-message" id="name-error"></span>
+            </div>
+            <div class="col-md-6">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              <span class="error-message" id="email-error"></span>
+            </div>
+            <div class="col-md-12">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              <span class="error-message" id="subject-error"></span>
+            </div>
+            <div class="col-md-12">
+              <textarea class="form-control" name="message" id="message" rows="6" placeholder="Message" required></textarea>
+              <span class="error-message" id="message-error"></span>
+            </div>
+            <div class="col-md-12 text-center">
+              <button type="submit">Send Message</button>
+            </div>
+          </div>
+        </form>
+      </div><!-- End Contact Form -->
+    </div>
+  </div>
+</section><!-- /Contact Section -->
+
+
+<script>
+  // Function to validate the name field
+  function validateName() {
+    var nameInput = document.getElementById("name");
+    var name = nameInput.value.trim();
+    var nameError = document.getElementById("name-error");
+
+    if (!/^[A-Za-z][A-Za-z\s]*[A-Za-z]$/.test(name)) {
+      nameError.textContent = "Name should start and end with letters and should not contain numbers.";
+      return false;
+    } else {
+      nameError.textContent = "";
+      return true;
+    }
+  }
+
+  // Function to validate the email field
+  function validateEmail() {
+    var emailInput = document.getElementById("email");
+    var email = emailInput.value.trim();
+    var emailError = document.getElementById("email-error");
+
+    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      emailError.textContent = "Invalid email address";
+      return false;
+    } else {
+      emailError.textContent = "";
+      return true;
+    }
+  }
+
+  // Function to validate the subject field
+  function validateSubject() {
+    var subjectInput = document.getElementById("subject");
+    var subject = subjectInput.value.trim();
+    var subjectError = document.getElementById("subject-error");
+
+    if (subject.length === 0) {
+      subjectError.textContent = "Subject cannot be empty.";
+      return false;
+    } else {
+      subjectError.textContent = "";
+      return true;
+    }
+  }
+
+  // Function to validate the message field
+  function validateMessage() {
+    var messageInput = document.getElementsByName("message")[0];
+    var message = messageInput.value.trim();
+    var messageError = document.getElementById("message-error");
+
+    if (message.length === 0) {
+      messageError.textContent = "Message cannot be empty.";
+      return false;
+    } else {
+      messageError.textContent = "";
+      return true;
+    }
+  }
+
+  // Function to validate the entire form
+  function validateForm() {
+    return validateName() && validateEmail() && validateSubject() && validateMessage();
+  }
+
+  // Add event listeners for live validation
+  document.getElementById("name").addEventListener("input", validateName);
+  document.getElementById("email").addEventListener("input", validateEmail);
+  document.getElementById("subject").addEventListener("input", validateSubject);
+  document.getElementsByName("message")[0].addEventListener("input", validateMessage);
+</script>
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="{% url "index" %}" class="logo d-flex align-items-center">
+            <span class="sitename">PRECON GLOBAL</span>
+          </a>
+          <div class="footer-contact pt-3">
+           <h4> Dubai Branch:</h4>
+           <p> SIT Towers, Dubai Silicon Oasis,</p>
+           <p> P O Box. 333438,</p>
+           <p> Office No. 1104, Dubai, UAE.</p>
+           <p ><strong>Phone:</strong> <span><a href="tel:+971 52 247 8304">+971 52 247 8304</a></span></p>
+            <p class="mt-3"><strong>Email:</strong> <span><a href="mailto:info@precon.com.kw">info@precon.com.kw</a></span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            {% comment %} <a href=""><i class="bi bi-twitter"></i></a> {% endcomment %}
+            {% comment %} <a href=""><i class="bi bi-facebook"></i></a> {% endcomment %}
+          <a href="https://www.instagram.com/preconglobal?igsh=djgyYzkzcWo5aGx5" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/precon-global/" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://wa.me/+919633251970"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 footer-links">
+          <br><br><br>
+          <h4> Indian Branch:</h4>
+          <p>No. F-1107, Block-1, </p>
+           <p> First Floor Ardente Office One,<br> Hoodi Circle,ITPL Main Rd,<br> Bengaluru, Karnataka 560048</p>
+            <p><strong>Phone:</strong> <span><a href="tel:+91 96332 51970">+91 96332 51970</a></span></p>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <br><br><br>
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#get-started">About us</a></li>
+            <li><a href="#services">Services</a></li>            
+            <li><a href="#features">Products</a></li>
+            <li><a href="{% url "brouchere" %}">Get a Brochure</a></li>
+            <li><a href="{% url "contact" %}">Contact Us</a></li>
+          </ul>
+        </div>
+
+        {% comment %} <div class="col-lg-2 col-md-3 footer-links">
+          <br><br><br>
+          <h4>Our Products</h4>
+          <ul>
+            <li><a href="{% url "warema" %}">Warema</a></li>
+            <li><a href="{% url "overlap" %}">Overlap</a></li>
+            <li><a href="#">Origin</a></li>
+            <li><a href="#">Serge Ferrari</a></li>
+          </ul>
+        </div> {% endcomment %}
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+  <script src="{% static "vendor/php-email-form/validate.js" %}"></script>
+  <script src="{% static "vendor/aos/aos.js" %}"></script>
+  <script src="{% static "vendor/glightbox/js/glightbox.min.js" %}"></script>
+  <script src="{% static "vendor/imagesloaded/imagesloaded.pkgd.min.js" %}"></script>
+  <script src="{% static "vendor/isotope-layout/isotope.pkgd.min.js" %}"></script>
+  <script src="{% static "vendor/swiper/swiper-bundle.min.js" %}"></script>
+  <script src="{% static "vendor/purecounter/purecounter_vanilla.js" %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static "js/main.js" %}"></script>
+
+</body>
+
+</html>
